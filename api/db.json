@@ -61,12 +61,80 @@
     {
       "id": 1,
       "comment": "TELA HD",
-      "promotionId": 1
+      "promotionId": 1,
+      "userId": 1
     },
     {
       "id": 2,
       "comment": "de R$ 599,90 \n por R$246,05à vista \n (5% de desconto) \n ou R$ 259,00 em 5x de R$ 51,80 sem juros",
-      "promotionId": 2
+      "promotionId": 2,
+      "userId": 2
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "marcos",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "marcos",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "marcos",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "marcos",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "marcos",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "alou",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "marcos",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "felipe",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "ade",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Marcos",
+      "avatarUrl": "https://avatars1.githubusercontent.com/u/50223741?s=460&u=b33c0084a1d22d2782eff4cc2cab6a36ad5f2877&v=4"
+    },
+    {
+      "id": 2,
+      "name": "Felps",
+      "avatarUrl": "https://img-cdn.hltv.org/playerbodyshot/IfV_5RUYVGT6BhjNq190JD.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C0%2C416%2C416&w=800&s=d32ecdba830c30636b53c615541724cc"
     }
   ]
 }
