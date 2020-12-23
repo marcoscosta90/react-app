@@ -1,60 +1,56 @@
-import React, {useState , useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
-import './Form.css';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import useApi from 'components/utils/useApi';
+import Field from 'components/Form/Field/Field'
+import { Formik, Form } from 'formik';
+import schema from './schema';
+import './Form.css';
 
 const initialValue = {
-    title: '',
-    url: '',
-    imageUrl: '',
-    price: 0,
+  title: '',
+  url: '',
+  imageUrl: '',
+  price: 0,
 }
 
-const PromotionForm = ( { id }) => {
-    const [values, setValues] = useState(id ? null : initialValue);
-    const history = useHistory();
+const PromotionForm = ({ id }) => {
 
-    const [load] = useApi({
-        url: `/promotions/${id}`,
-        method: 'get',
-     onCompleted: (response) => {
-      setValues(response.data);
+  const history = useHistory();
+
+  const [load, loadInfo] = useApi({
+    url: `/promotions/${id}`,
+    method: 'get',
+  });
+
+  const [save, saveInfo] = useApi({
+    url: id ? `/promotions/${id}` : '/promotions',
+    method: id ? 'put' : 'post',
+    onCompleted: (response) => {
+      if (!response.error) {
+        history.push('/');
+      }
     }
+  })
+
+  useEffect(() => {
+    if (id) {
+      load();
+    }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
+  function onSubmit(formValues) {
+    save({
+      data: values,
     });
+  }
 
-    const [save, saveInfo] = useApi({
-        url: id  ? `/promotions/${id}` : '/promotions',
-        method: id ? 'put' : 'post',        
-        onCompleted: (response) => {
-            if(!response.error){
-                history.push('/');
-            }
-        }
-    })
-    
-    useEffect(() => {
-        if(id) {
-            load();
-        }
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id]);
+  const values = id ? loadInfo.data : initialValue;
 
-    function onChange(ev) {
-        const {name, value} = ev.target;      
-            setValues({...values, [name]: value});
-    }
 
-    function onSubmit(ev){
-        ev.preventDefault();
-        save({
-            data:values,
-        });
-    }
 
-   
-    
 
-   
+
 
   return (
     <div>
@@ -64,28 +60,34 @@ const PromotionForm = ( { id }) => {
         ? (
           <div>Carregando...</div>
         ) : (
-          <form onSubmit={onSubmit}>
-            {saveInfo.loading && <span>Salvando dados...</span>}
-            <div className="promotion-form__group">
-              <label htmlFor="title">Título</label>
-              <input id="title" name="title" type="text" onChange={onChange} value={values.title} />
-            </div>
-            <div className="promotion-form__group">
-              <label htmlFor="url">Link</label>
-              <input id="url" name="url" type="text" onChange={onChange} value={values.url} />
-            </div>
-            <div className="promotion-form__group">
-              <label htmlFor="imageUrl">Imagem (URL)</label>
-              <input id="imageUrl" name="imageUrl" type="text" onChange={onChange} value={values.imageUrl} />
-            </div>
-            <div className="promotion-form__group">
-              <label htmlFor="price">Preço</label>
-              <input id="price" name="price" type="number" onChange={onChange} value={values.price} />
-            </div>
-            <div>
-              <button type="submit">Salvar</button>
-            </div>
-          </form>
+          <Formik
+            initialValues={values}
+            onSubmit={onSubmit}
+            validationSchema={schema}
+            render={() => (
+              <Form>
+                {saveInfo.loading && <span>Salvando dados...</span>}
+                <div className="promotion-form__group">                 
+                  <Field name="title" type="text" label="Título"/>
+                 
+                </div>
+                <div className="promotion-form__group">
+                  <Field name="url" type="text" label="Link" />
+                 
+                </div>
+                <div className="promotion-form__group">                 
+                  <Field name="imageUrl" type="text" label="Imagem (URL)" />
+                 
+                </div>
+                <div className="promotion-form__group">
+                  <Field name="price" type="number" label="Preço" />
+                
+                </div>
+                <div>
+                  <button type="submit">Salvar</button>
+                </div>
+              </Form>
+            )} />
         )}
     </div>
   )
