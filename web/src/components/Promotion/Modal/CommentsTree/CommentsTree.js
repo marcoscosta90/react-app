@@ -48,9 +48,9 @@ const PromotionModalCommentsTree = ({ comments, sendComment }) => {
         return <div> Carregando...</div>;
     }
 
-    function renderItem(item) {
+    function renderItem(item, index) {
         return (
-            <li className="promotion-modal-comments-tree__item">
+            <li key={index} className="promotion-modal-comments-tree__item">
                 <img
                     src={item.user.avatarUrl}
                     alt={`foto de ${item.user.name}`}

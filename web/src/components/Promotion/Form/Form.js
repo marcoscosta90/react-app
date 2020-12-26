@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import useApi from 'components/utils/useApi';
 import Field from 'components/Form/Field/Field'
-import { Formik, Form } from 'formik';
+import { Formik, Form, } from 'formik';
 import schema from './schema';
 import UIButton from 'components/UI/Button/Button';
 import './Form.css';
@@ -56,6 +56,7 @@ const PromotionForm = ({ id }) => {
         ? (
           <div>Carregando...</div>
         ) : (
+          
           <Formik
             initialValues={values}
             onSubmit={onSubmit}

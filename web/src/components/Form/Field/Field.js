@@ -3,7 +3,7 @@ import { useField } from 'formik';
 import './Field.css';
 
 const FormField = ({ name, id, label,  ...restProps}) => {
-    const [field, meta, helpers] = useField({ name, ...restProps});
+    const [field, meta] = useField({ name, ...restProps});
 
     return (
         <>

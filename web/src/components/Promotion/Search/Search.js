@@ -35,12 +35,13 @@ const PromotionSearch = () => {
         ...baseParams,
         _page: 1,
         title_like: search || undefined,
-      }
+      },
     });
+
     if (!mountRef.current) {
       mountRef.current = true;
     }
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
 
@@ -86,8 +87,14 @@ const PromotionSearch = () => {
         promotions={loadInfo.data}
         loading={loadInfo.loading}
         error={loadInfo.error}
+        refetch={() => {
+          load({
+            params: baseParams,
+          });
+        }}
       />
       {loadInfo.data && !loadInfo.loading && loadInfo.data?.length < loadInfo.total && (
+        
         <UIInfiniteScroll fetchMore={fetchMore}
         />
       )}

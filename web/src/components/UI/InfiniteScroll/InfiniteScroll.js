@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 
+
+
 const UIInfiniteScroll = ( { fetchMore }) => {
   const containerRef = useRef();
 
@@ -22,6 +24,7 @@ const UIInfiniteScroll = ( { fetchMore }) => {
        return () => {
         observer.disconnect();
        }
+       // eslint-disable-next-line
    }, []);
    
     return <div ref={containerRef} />;
