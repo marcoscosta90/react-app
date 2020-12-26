@@ -27,34 +27,6 @@
       "price": 699.9,
       "url": "",
       "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem_url/9c4b176eb52bb4877e853cf36393d8fc.jpg"
-    },
-    {
-      "title": "Mesa Gamer 1 Gaveta DRX 9000 Espresso Móveis Preto/Vermelho",
-      "url": "https://www.americanas.com.br/produto/1392321128?opn=YSMESP&WT.srch=1&sellerid=10490181000135&epar=bp_pl_00_go_mv_todas_geral_gmv&acc=e789ea56094489dffd798f86ff51c7a9&i=56424cdf6ed24cafb5b640a0&o=5df0e95df8e95eac3da3c944&gclid=EAIaIQobChMI2a7R8vHN7QIVygmRCh0d8AobEAQYAiABEgIhm_D_BwE&cor=Preto%2FVermelho",
-      "imageUrl": "https://images-americanas.b2w.io/produtos/01/00/img/1392321/1/1392321136_1GG.jpg",
-      "price": "208",
-      "id": 5
-    },
-    {
-      "title": "Notebook Acer Aspire 5 A514-53-59QJ Intel Core I5 8GB 256GB SSD 14' Windows 10",
-      "url": "https://www.americanas.com.br/produto/2587924658?cor=Prata",
-      "imageUrl": "https://images-americanas.b2w.io/produtos/01/00/img/2587924/6/2587924666_1GG.jpg",
-      "price": "3428",
-      "id": 6
-    },
-    {
-      "title": "Smart TV Led 43'' LG 43LM6300 FHD Thinq AI Conversor Digital Integrado 3 HDMI 2 USB Wi-Fi",
-      "url": "https://www.americanas.com.br/produto/134444740",
-      "imageUrl": "https://images-americanas.b2w.io/produtos/01/00/img/134444/7/134444758_1GG.jpg",
-      "price": "2000",
-      "id": 7
-    },
-    {
-      "title": "Smartphone Samsung Galaxy S10 - Preto",
-      "url": "https://www.americanas.com.br/produto/134217344",
-      "imageUrl": "https://images-americanas.b2w.io/produtos/01/00/img/134217/3/134217352_1GG.jpg",
-      "price": "2500",
-      "id": 8
     }
   ],
   "comments": [
@@ -123,12 +95,6 @@
       "promotionId": 1,
       "comment": "ade",
       "id": 11
-    },
-    {
-      "userId": 1,
-      "promotionId": 6,
-      "comment": "Ola",
-      "id": 12
     },
     {
       "userId": 1,
